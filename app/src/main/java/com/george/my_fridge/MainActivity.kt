@@ -5,53 +5,35 @@ package com.george.my_fridge
  *
  */
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 
+import androidx.appcompat.app.AppCompatActivity
+import com.george.my_fridge.GroceryList as GroceryList1
 
 
 class MainActivity : AppCompatActivity() {
-    var counter: Int = 0
-    val str = "Ты че жрать-то собрался??!!"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val counter = findViewById<TextView>(R.id.counter)
+        val textProducts = findViewById<TextView>(R.id.textProducts)
+        val createName = findViewById<TextView>(R.id.create_product_name)
+
         val createButton = findViewById<Button>(R.id.create_button)
-        val eatButton = findViewById<Button>(R.id.eat_button)
-
-        val eatCounter = findViewById<TextView>(R.id.counter)
-
-        if (savedInstanceState != null) {
-            counter = savedInstanceState.getInt("counter")
-            if (counter < 0) {
-                eatCounter.text = str
-            } else eatCounter.text = "${counter}"
+        val openGrocery = findViewById<Button>(R.id.open_grovery)
 
         }
-
-        createButton.setOnClickListener() {
-
-            eatCounter.text = "${++counter}"
-        }
-
-        eatButton.setOnClickListener() {
-
-            eatCounter.text = "${--counter}"
-            if (counter < 0) eatCounter.text = str
+        fun openGrocery(view: View){
+            val intent = Intent(this, GroceryList1::class.java)
+            startActivity(intent)
         }
 
     }
 
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        super.onSaveInstanceState(savedInstanceState)
-        savedInstanceState.putInt("counter", counter)
-
-    }
-
-
-}

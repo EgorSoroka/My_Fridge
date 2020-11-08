@@ -3,4 +3,7 @@
     <string name="eat">Сьесть продукт!</string>
     <string name="create">Добавить продукт!</string>
     <string name="counter">Количество продуктов.</string>
+    <string name="enter_name">Введите:</string>
+    <string name="product_name">Название продукта</string>
+    <string name="open">Открыть холодильник!</string>
 </resources>

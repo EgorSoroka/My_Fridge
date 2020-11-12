@@ -6,6 +6,9 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
+    apply plugin: 'com.android.application'
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
 
     defaultConfig {
         applicationId "com.george.my_fridge"

@@ -13,7 +13,7 @@ interface FoodDao {
     fun getAlphabetizedWords(): Flow<List<Products>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(food: Products)
+    suspend fun insert(products: Products)
 
     @Query("DELETE FROM Products_list")
     suspend fun deleteAll()
